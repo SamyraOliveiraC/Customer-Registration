@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Clientes e Produtos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Parte do Cadastro -->
+    <div class="cadastro-cliente">
+      <h2>Cadastro de Cliente</h2>
+      <form @submit.prevent="cadastrarCliente">
+        <input type="text" v-model="novoCliente.nome" placeholder="Nome">
+        <input type="text" v-model="novoCliente.documento" placeholder="Documento">
+        <input type="tel" v-model="novoCliente.telefone" placeholder="Telefone">
+        <input type="email" v-model="novoCliente.email" placeholder="E-mail">
+        <label for="ativoCliente">Ativo:</label>
+        <select id="ativoCliente" v-model="novoCliente.ativo">
+          <option value="sim">Sim</option>
+          <option value="não">Não</option>
+        </select>
+        <button type="submit">Cadastrar Cliente</button>
+      </form>
+    </div>
+    <!-- Parte do Cadastro de Clientes -->
+    <div class="cadastro-produto">
+      <h2>Cadastro de Produto</h2>
+      <form @submit.prevent="cadastrarProduto">
+        <input type="text" v-model="novoProduto.nome" placeholder="Nome">
+        <label for="ativoProduto">Ativo:</label>
+        <select id="ativoProduto" v-model="novoProduto.ativo">
+          <option value="sim">Sim</option>
+          <option value="não">Não</option>
+        </select>
+        <button type="submit">Cadastrar Produto</button>
+      </form>
+    </div>
+    <!-- Associar Produto e Cliente -->
+    <div class="associar-produto-cliente">
+      <h2>Associar Produto ao Cliente</h2>
+      <form @submit.prevent="associarProdutoCliente">
+        <label for="cliente">Cliente:</label>
+        <select id="cliente" v-model="clienteSelecionado">
+          <option v-for="cliente in clientes" :value="cliente">{{ cliente.nome }}</option>
+        </select>
+        
+        <label for="produto">Produto:</label>
+        <select id="produto" v-model="produtoSelecionado">
+          <option v-for="produto in produtos" :value="produto">{{ produto.nome }}</option>
+        </select>
+        <button type="submit">Associar Produto ao Cliente</button>
+    </div>
+    <!-- Listas dos Clientes -->
+    <div class="lista-clientes">
+      <h2>Lista de Clientes</h2>
+      </select>
+      <ul>
+        <li v-for="cliente in clientes">
+          {{ cliente.nome }} - {{ cliente.documento }} - {{ cliente.telefone }} - {{ cliente.email }} - Ativo: 
+          <select v-model="cliente.ativo">
+            <option value="sim">Sim</option>
+            <option value="não">Não</option>
+          </select>
+          <ul>
+            <li v-for="produto in cliente.produtosDisponiveis">{{ produto.nome }}</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- Listas de Produtos -->
+    <div class="lista-produtos">
+      <h2>Lista de Produtos</h2>
+      <ul>
+        <li v-for="produto in produtos">
+          {{ produto.nome }} - Ativo:
+          <select v-model="cliente.ativo">
+            <option value="sim">Sim</option>
+            <option value="não">Não</option>
+          </select>
+        </li>
+      </ul>
+    </div>
+  </div>
+    <!-- Vue.js e JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          clientes: [],
+          produtos: [],
+          novoCliente: {
+            nome: "",
+            documento: "",
+            telefone: "",
+            email: "",
+            ativo: "sim",
+            produtosDisponiveis: []
+          },
+          novoProduto: {
+            nome: "",
+            ativo: "sim"
+          },
+          clienteSelecionado: null,
+          produtoSelecionado: null
+        };
+      },
+      methods: {
+        cadastrarCliente() {
+          this.clientes.push({...this.novoCliente});
+          this.novoCliente = {
+            nome: "",
+            documento: "",
+            telefone: "",
+            email: "",
+            ativo: "sim",
+            produtosDisponiveis: []
+          };
+        },
+        cadastrarProduto() {
+          this.produtos.push({...this.novoProduto});
+          this.novoProduto = {
+            nome: "",
+            ativo: "sim"
+          };
+        },
+        associarProdutoCliente() {
+          if (this.clienteSelecionado && this.produtoSelecionado) {
+            this.clienteSelecionado.produtosDisponiveis.push({...this.produtoSelecionado});
+            console.log("Produto associado ao cliente:", this.produtoSelecionado.nome, "para", this.clienteSelecionado.nome);
+          } else {
+            console.error("Cliente ou produto não selecionado.");
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
