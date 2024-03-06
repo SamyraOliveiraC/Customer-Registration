@@ -4,9 +4,9 @@ As decisões que tomei no começo, foi aprender python, e fazer tudo em python. 
 
 Para organizar meu projeto utilizei ctrl e ; que são comentários.
 
-°Estrutura: Para realizar a efetivação do código utilizei HTML, CSS, JavaScript e um Framework Vue.js, que seria uma página web que utilizará vue.js. E fiz uma breve pesquisa na internet como: e livros na biblioteca da faculdade.
+°Estrutura: Para realizar a efetivação do código utilizei HTML, CSS, JavaScript e um Framework Vue.js, que seria uma página web que utilizará vue.js. E fiz uns breve vídeos no YouTube e livros na biblioteca da faculdade.
 
-°Dividi meu código em algumas  divisões/seções <div>, onde cada um representa uma funcionalidade diferente, para isso utilizei o <div id="app"> onde seria entrado o vue.js. eu nomeei como app, pois achei melhor na execução.
+°Dividi meu código em algumas  divisões/seções <div, onde cada um representa uma funcionalidade diferente, para isso utilizei o <div id="app"> onde seria entrado o vue.js. eu nomeei como app, pois achei melhor na execução.
 
 °Cadastro de Clientes: na parte das divições, na parte cadastro-cliente contém formulários para cadastrar o novo cliente, com as seguintes informações: nome, documento, telefone, email, e um seletor para selecionar se o novo cliente está ativo ou não. E utilizei o método cadastrarcliente.
 
