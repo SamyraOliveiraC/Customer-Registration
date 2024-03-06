@@ -1,0 +1,104 @@
+/* Estilo para o corpo da página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(58, 174, 219);
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Estilo principal */
+#app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estilo para os títulos */
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Estilo para os campos de entrada */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+select {
+  margin-bottom: 10px;
+  padding: 10px;
+  width: calc(70% - 30px);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Estilo para os botões */
+button {
+  padding: 7px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para as listas */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Estilo para itens de lista */
+li {
+  margin-bottom: 10px;
+}
+
+/* Estilo para os selects */
+select {
+  width: calc(25% - 20px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Estilo cadastro de clientes */
+.cadastro-cliente {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.cadastro-produto {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.associar-produto-cliente {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para a seção de lista de clientes */
+.lista-clientes {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.lista-produtos {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
